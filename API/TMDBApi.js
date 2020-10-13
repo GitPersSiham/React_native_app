@@ -1,13 +1,14 @@
 // API/TMDBApi.js
 
-const API_TOKEN = "";
+const API_TOKEN = "8151c5d9b9198f136a5e3735f875e3b3";
 
-export function getFilmsFromApiWithSearchedText (text) {
-    const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_TOKEN + '&language=fr&query=' + text
-    return fetch(url)
+
+export function getFilmsFromApiWithSearchedText (text, page) {
+  const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_TOKEN + '&language=fr&query=' + text + "&page=" + page
+  return fetch(url)
     .then((response) => response.json())
     .catch((error) => console.error(error))
-  }
+}
 
 
   export function getImageFromApi (name) {
